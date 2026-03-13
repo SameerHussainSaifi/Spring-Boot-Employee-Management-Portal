@@ -15,23 +15,18 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService es;
 	
-	@GetMapping("/")
-	public String showHomePage() {
-		return "home";
-	}
 	
-	 @GetMapping("/admin/login")
-	    public String showLoginPage() {
-	        return "adminLogin"; // This will render WEB-INF/views/admin-login.jsp
-	    }
-
-	    @GetMapping("/admin/register")
-	    public String showRegisterPage() {
-	        return "adminRegister"; // This will render WEB-INF/views/admin-register.jsp
-	    }
 	
-	@PostMapping("/save")
+	 
+@GetMapping("/employee/add")
+public String showAddEmployeePage() {
+	return "addEmployee";
+}
+	    
+	
+	@PostMapping("/employee/save")
 	public String addEmployee(@ModelAttribute Employee emp) {
-		return es.addEmployee(emp);
+		es.addEmployee(emp);
+		return "redirect:/admin/dashboard";
 	}
 }

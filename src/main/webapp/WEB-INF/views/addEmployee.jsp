@@ -1,20 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Employee Management Portal</title>
+<title>Add Employee</title>
 
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" href="/css/addEmployee.css">
 
 </head>
 
 <body>
 
-<div class="container">
+<!-- NAVBAR -->
+<nav class="navbar">
 
-<h1>Employee Management Portal</h1>
+    <div class="nav-left">
+        <h2>Employee Management Portal</h2>
+    </div>
+
+    <div class="nav-right">
+        <a href="/admin/dashboard">
+            <button class="back-btn">Back to Dashboard</button>
+        </a>
+    </div>
+
+</nav>
+
+
+<!-- FORM CONTAINER -->
+
+<div class="form-container">
+
+<h1>Add Employee</h1>
 
 <form action="/employee/save" method="post">
 
@@ -53,7 +72,7 @@
 <input type="text" name="phone" required>
 </div>
 
-<button type="submit">Save Employee</button>
+<button type="submit" class="save-btn">Save Employee</button>
 
 </form>
 

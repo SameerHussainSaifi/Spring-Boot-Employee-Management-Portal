@@ -9,8 +9,8 @@
     <div class="login-container">
         <h1>Admin Login</h1>
         <form action="/admin/login" method="post" class="login-form">
-            <label>Username</label>
-            <input type="text" name="username" placeholder="Enter username" required/>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter Email" required/>
 
             <label>Password</label>
             <input type="password" name="password" placeholder="Enter password" required/>
