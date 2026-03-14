@@ -8,6 +8,11 @@
 <body>
     <div class="login-container">
         <h1>Admin Login</h1>
+        <c:if test="${not empty message}">
+<script>
+    alert("${message}");
+</script>
+</c:if>
         <form action="/admin/login" method="post" class="login-form">
             <label>Email</label>
             <input type="email" name="email" placeholder="Enter Email" required/>

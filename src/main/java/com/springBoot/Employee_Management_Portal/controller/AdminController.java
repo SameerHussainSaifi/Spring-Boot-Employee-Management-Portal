@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.springBoot.Employee_Management_Portal.entity.Admin;
 import com.springBoot.Employee_Management_Portal.entity.Employee;
@@ -65,6 +66,15 @@ public class AdminController {
 		Admin admin=(Admin) session.getAttribute("admin");
 		model.addAttribute("admin",admin);
 		return "dashboard";
+	}
+	
+	
+	
+	@GetMapping("/admin/logout")
+	public String adminLogout(HttpSession session, RedirectAttributes ra) {
+		session.invalidate();
+		ra.addFlashAttribute("message", "Admin logged out Successfully");
+	return "redirect:/admin/login";	
 	}
 
 }
