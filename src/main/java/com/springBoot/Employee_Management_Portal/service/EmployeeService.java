@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Component;
 
 import com.springBoot.Employee_Management_Portal.entity.Employee;
@@ -37,4 +39,10 @@ public class EmployeeService {
 		return "employee deleted";
 		
 	}
+	
+	public List<Employee> searchEmployeeByName(String name) {
+		 return er.findByNameContainingIgnoreCase(name);
+	}
+	
+	
 }

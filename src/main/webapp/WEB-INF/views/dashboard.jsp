@@ -37,6 +37,19 @@
 
 </nav>
 
+<!-- SEARCH BAR -->
+
+<div class="search-container">
+
+<form action="/employee/search" method="get">
+
+<input type="text" name="name" placeholder="Search employee by name">
+
+<button type="submit">Search</button>
+
+</form>
+
+</div>
 
 <!-- EMPLOYEE CARDS -->
 
@@ -72,6 +85,8 @@
 </c:forEach>
 
 </div>
+
+
 
 </body>
 </html>

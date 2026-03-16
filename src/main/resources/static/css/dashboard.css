@@ -147,3 +147,29 @@ cursor:pointer;
 .delete-btn:hover{
 background:#c0392b;
 }
+
+.search-container{
+margin:20px;
+text-align:center;
+}
+
+.search-container input{
+padding:10px;
+width:250px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.search-container button{
+padding:10px 15px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.search-container button:hover{
+background:#0056b3;
+}
+

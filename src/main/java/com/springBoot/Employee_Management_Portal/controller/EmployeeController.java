@@ -1,17 +1,22 @@
 package com.springBoot.Employee_Management_Portal.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.springBoot.Employee_Management_Portal.entity.Employee;
 import com.springBoot.Employee_Management_Portal.service.EmployeeService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class EmployeeController {
@@ -53,4 +58,14 @@ public String showAddEmployeePage() {
 		es.deleteEmployee(id);
 		return "redirect:/admin/dashboard";
 	}
+	
+	@GetMapping("/employee/search")
+	public String searchEmployeeByName(@RequestParam("name") String name, Model model) {
+		List<Employee> emp=es.searchEmployeeByName(name);
+		model.addAttribute("employees",emp);
+		return "dashboard";
+	}
+	
+	
+
 }
